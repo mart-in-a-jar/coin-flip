@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/coin-flip/static/css/main.cb960336.css",
+    "main.js": "/coin-flip/static/js/main.073d755a.js",
+    "static/media/placeholder.jpg": "/coin-flip/static/media/placeholder.162b9ae224c35004ae3c.jpg",
+    "static/media/sideB.jpg": "/coin-flip/static/media/sideB.38421706cb991f4f4f6e.jpg",
+    "static/media/sideA.png": "/coin-flip/static/media/sideA.d20895c05fcc7003eab3.png",
+    "index.html": "/coin-flip/index.html",
+    "main.cb960336.css.map": "/coin-flip/static/css/main.cb960336.css.map",
+    "main.073d755a.js.map": "/coin-flip/static/js/main.073d755a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb960336.css",
+    "static/js/main.073d755a.js"
+  ]
+}
