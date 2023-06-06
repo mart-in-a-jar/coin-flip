@@ -1,10 +1,14 @@
 import { useState } from "react";
 import styles from "./App.module.scss";
-import sideAImg from "./img/105-freelancer.svg";
-import sideBImg from "./img/106-italy.svg";
+// import sideAImg from "./img/105-freelancer.svg";
+import sideAImg from "./img/sideA.png";
+// import sideBImg from "./img/106-italy.svg";
+import sideBImg from "./img/sideB.jpg";
+import placeholderImg from "./img/placeholder.jpg";
 
 function App() {
     const [coinStyle, setCoinStyle] = useState("");
+    const [hasSpun, setHasSpun] = useState(false);
 
     const sides = {
         a: {
@@ -19,6 +23,7 @@ function App() {
 
     const spin = () => {
         setCoinStyle("");
+        setHasSpun(true);
         setTimeout(() => {
             if (Math.random() < 0.5) {
                 setCoinStyle(styles.b);
@@ -29,7 +34,17 @@ function App() {
     };
     return (
         <div className={styles.root}>
+            {!hasSpun && (
+                <div className={styles.pointer}>
+                    Spin that shit<span>👇🏽</span>
+                </div>
+            )}
             <div className={`${styles.coin} ${coinStyle}`} onClick={spin}>
+                {!hasSpun && (
+                    <div className={styles.placeholder}>
+                        <img src={placeholderImg} alt="Placeholder" />
+                    </div>
+                )}
                 <div className={styles["side-a"]}>
                     <img src={sides.a.img} alt={sides.a.name} />
                 </div>

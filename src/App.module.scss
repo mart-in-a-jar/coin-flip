@@ -1,5 +1,6 @@
 .root {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -13,10 +14,10 @@
     transform-style: preserve-3d;
     cursor: pointer;
     &.a {
-      animation: spin-to-side-a 4s cubic-bezier(.13,.8,.58,1) forwards;
+        animation: spin-to-side-a 4s cubic-bezier(0.13, 0.8, 0.58, 1) forwards;
     }
     &.b {
-      animation: spin-to-side-b 4s cubic-bezier(.13,.8,.58,1) forwards;
+        animation: spin-to-side-b 4s cubic-bezier(0.13, 0.8, 0.58, 1) forwards;
     }
     div {
         backface-visibility: hidden;
@@ -35,6 +36,26 @@
         z-index: 1;
         transform: rotateY(180deg);
     }
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.pointer {
+    position: absolute;
+    transform: translateY(-250px);
+    z-index: 5;
+    font-size: 5rem;
+    animation: point 1s linear infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.placeholder {
+    z-index: 6;
 }
 
 @keyframes spin-to-side-a {
@@ -52,5 +73,17 @@
     }
     to {
         transform: rotateY(calc(1080deg * 4 - 180deg));
+    }
+}
+
+@keyframes point {
+    0% {
+        transform: translateY(-250px);
+    }
+    50% {
+        transform: translateY(-350px);
+    }
+    100% {
+        transform: translateY(-250px);
     }
 }
